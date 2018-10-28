@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>important documents</title>
+	<style>
+		body{}
+		#box{width: 600px; height: 400px;}
+		#my{position: absolute; width: 550px; height: 250px; font-size: 6em; 
+			opacity: 0; 
+			top:20px; left:750px;
+			animation: sha 8s forwards;
+			font-weight: bold;
+			transform: rotate3d(3,-6,-1,45deg)}
+
+		#deul{position: absolute; width: 550px; height: 250px; font-size: 6em; 
+			top:50px; left:0px;
+			font-weight: bold;
+			animation: sha2 3s forwards;
+			transform: rotate3d(3,-6,-1,45deg)}	
+
+		.square{width: 250px; height: 250px; 
+			background: none; opacity: 0;
+			transform: rotate3d(3,-6,-1,45deg);
+
+			transition: 0.5s; 
+			animation: drop 1s forwards; position: absolute; background-size: cover;}
+
+		.square:hover{margin-left: -100px;}
+
+		
+		@keyframes drop{
+			from{margin-top: 150px; opacity: 0;}
+			to{margin-top: 20px; opacity: 1;}}
+
+		@keyframes sha{
+			from{opacity: 0;}
+			to{opacity: 1;}}
+
+		@keyframes sha2{
+			0%{opacity: 0;}
+			20%{opacity: 0;}
+			40%{opacity: 0;}
+			60%{opacity: 0;}
+			80%{opacity: 0;}
+			100%{opacity: 1;}}
+
+
+	</style>
+</head>
+<body>
+	
+	<div id="my">
+		"My<br> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Favorite<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Playlist"
+	</div>
+
+	<div id="deul">
+		들<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;려<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;준<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;는<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;안<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;함
+	</div>
+
+	
+	<div id="square">
+		<div id="box">
+		</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		
+		var total = 0;
+		for(var i=0; i<18; i++){
+			var c = document.getElementById("square")
+			var d = c.cloneNode(true);
+			d.style.animationDelay = i*0.08 + "s";
+			d.id = "a" + i;
+			d.style.backgroundImage = "url(j" + i + ".jpg)";
+			d.style.backgroundSize = "cover";
+			d.className = "square";
+			d.style.left = 75*i + "px";
+			d.style.top = 28*i + "px";
+
+			d.onclick = function(){
+				
+					var k = document.getElementById(this.id);
+					k.style.marginLeft = "-2000px";
+
+				/*k.getElementsByClassName("inner")[0].style.marginTop = "-100px";*/
+			}
+
+			document.body.appendChild(d);
+			}		
+
+			square.style.display = "none";
+	</script>
+</body>
+</html>
